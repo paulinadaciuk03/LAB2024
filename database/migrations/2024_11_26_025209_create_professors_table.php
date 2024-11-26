@@ -12,22 +12,17 @@ return new class extends Migration
      * @return void
      */
     public function up()
-{
-    Schema::create('professors', function (Blueprint $table) {
-        $table->id();
-        $table->string('name');
-        $table->timestamps();
-    });
-}
-
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    {
+        Schema::create('professors', function (Blueprint $table) {
+            $table->id();
+            $table->string('name'); // Solo el campo nombre
+            $table->timestamps();
+        });
+    }
+    
     public function down()
     {
         Schema::dropIfExists('professors');
     }
+    
 };
