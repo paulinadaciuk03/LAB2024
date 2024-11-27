@@ -7,12 +7,15 @@ use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
-    public function index()
-    {
-        $students = Student::all(); // Obtener todos los estudiantes
-        return view('students.index', compact('students')); // Pasar los estudiantes a la vista
-    }
-    
+    public function index(Request $request)
+{
+    $query = $request->input('name'); 
+    $students = Student::when($query, function ($queryBuilder) use ($query) {
+        return $queryBuilder->where('name', 'LIKE', "%{$query}%"); // Filtrar estudiantes por nombre
+    })->get();
+
+    return view('students.index', compact('students'));
+}
 
     public function create()
     {

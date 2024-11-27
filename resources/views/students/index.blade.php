@@ -12,10 +12,11 @@
     <h1 class="my-4">Estudiantes</h1>
     <form action="{{ route('students.index') }}" method="GET">
         <input type="text" name="name" placeholder="Buscar por nombre">
-        <button type="submit" class="btn btn-primary">Buscar</button>
-        <a href="{{ url('/') }}" class="btn btn-secondary">Volver</a>
+        <button type="submit" class="btn btn-primary mb-2">Buscar</button>
     </form>
-    <a href="{{ route('students.create') }}" class="btn btn-success mb-3">Nuevo Estudiante</a>
+    
+    <a href="{{ route('students.create') }}" class="btn btn-success mb-2">Nuevo Estudiante</a>
+    <a href="{{ url('/') }}" class="btn btn-secondary mb-2">Volver</a>
     <table class="table table-bordered table-striped">
         <thead>
             <tr>

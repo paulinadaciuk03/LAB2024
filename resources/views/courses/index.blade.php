@@ -11,7 +11,6 @@
 <div class="container">
     <h1 class="my-4">Cursos</h1>
 
-    <!-- Filtro por materia -->
     <form action="{{ route('courses.index') }}" method="GET" class="mb-3">
         <select name="subject_id" class="form-control mb-2">
             <option value="">Seleccionar Materia</option>
