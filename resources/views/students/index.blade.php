@@ -12,7 +12,6 @@
     <h1 class="my-4">Estudiantes</h1>
     <form action="{{ route('students.index') }}" method="GET">
         <input type="text" name="name" placeholder="Buscar por nombre">
-        <input type="text" name="course" placeholder="Buscar por curso">
         <button type="submit" class="btn btn-primary">Buscar</button>
         <a href="{{ url('/') }}" class="btn btn-secondary">Volver</a>
     </form>
