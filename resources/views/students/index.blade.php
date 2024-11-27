@@ -14,6 +14,7 @@
         <input type="text" name="name" placeholder="Buscar por nombre">
         <input type="text" name="course" placeholder="Buscar por curso">
         <button type="submit" class="btn btn-primary">Buscar</button>
+        <a href="{{ url('/') }}" class="btn btn-secondary">Volver</a>
     </form>
     <a href="{{ route('students.create') }}" class="btn btn-success mb-3">Nuevo Estudiante</a>
     <table class="table table-bordered table-striped">

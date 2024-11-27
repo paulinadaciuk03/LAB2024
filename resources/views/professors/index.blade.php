@@ -11,6 +11,7 @@
 <div class="container">
     <h1 class="my-4">Profesores</h1>
     <a href="{{ route('professors.create') }}" class="btn btn-success mb-3">Nuevo Profesor</a>
+    <a href="{{ url('/') }}" class="btn btn-primary mb-3">Volver</a>
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -28,6 +29,7 @@
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de eliminar este profesor?')">Eliminar</button>
+                        
                     </form>
                 </td>
             </tr>

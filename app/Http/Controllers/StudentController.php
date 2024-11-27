@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
-    // Mostrar todos los estudiantes
     public function index()
     {
         $students = Student::all(); // Obtener todos los estudiantes

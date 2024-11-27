@@ -37,6 +37,8 @@
             </select>
         </div>
         <button type="submit" class="btn btn-primary mt-3">Inscribir</button>
+        <a href="{{ url('/course_students') }}" class="btn btn-secondary mt-3">Volver</a>
+
     </form>
 </div>
 </body>

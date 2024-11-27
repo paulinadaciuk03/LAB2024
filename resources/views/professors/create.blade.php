@@ -17,10 +17,9 @@
             <label for="name">Nombre</label>
             <input type="text" class="form-control" id="name" name="name" required>
         </div>
+        <a href="{{ url('/professors') }}" class="btn btn-secondary mt-3">Volver</a>
         <button type="submit" class="btn btn-primary mt-3">Crear Profesor</button>
     </form>
 </div>
-
-
 </body>
 </html>

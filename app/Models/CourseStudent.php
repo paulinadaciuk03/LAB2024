@@ -10,4 +10,19 @@ class CourseStudent extends Pivot
     use HasFactory;
 
     protected $fillable = ['student_id', 'course_id', 'commission_id'];
+
+    public function student()
+    {
+        return $this->belongsTo(Student::class);
+    }
+
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
+
+    public function commission()
+    {
+        return $this->belongsTo(Commission::class);
+    }
 }

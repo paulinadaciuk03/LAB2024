@@ -11,7 +11,6 @@ class Subject extends Model
 
     protected $fillable = ['name'];
 
-    // Relación de uno a muchos con los cursos
     public function courses()
     {
         return $this->hasMany(Course::class);

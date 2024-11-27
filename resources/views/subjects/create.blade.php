@@ -3,25 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear Estudiante</title>
+    <title>Editar Estudiante</title>
     <!-- Importar Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<div class="container mt-4">
-    <h1 class="my-4">Crear Estudiante</h1>
-    <form action="{{ route('students.store') }}" method="POST">
+<div class="container">
+    <h1 class="my-4">Nueva Materia</h1>
+    <form action="{{ route('subjects.store') }}" method="POST">
         @csrf
         <div class="form-group">
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name" class="form-control" required>
+            <label for="name">Nombre</label>
+            <input type="text" class="form-control" id="name" name="name" required>
         </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" class="form-control" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Guardar</button>
-        <a href="{{ url('/students') }}" class="btn btn-secondary">Volver</a>
+        <button type="submit" class="btn btn-primary mt-3">Crear Materia</button>
+        <a href="{{ url('/subjects') }}" class="btn btn-secondary mt-3">Volver</a>
     </form>
 </div>
 <!-- Importar Bootstrap JS y dependencias -->
@@ -30,3 +26,4 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+

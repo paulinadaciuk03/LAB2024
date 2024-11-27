@@ -11,6 +11,8 @@
 <div class="container">
     <h1 class="my-4">Inscripciones de Estudiantes</h1>
     <a href="{{ route('course_students.create') }}" class="btn btn-success mb-3">Nueva Inscripción</a>
+    <a href="{{ url('/') }}" class="btn btn-secondary mb-3">Volver</a>
+
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
