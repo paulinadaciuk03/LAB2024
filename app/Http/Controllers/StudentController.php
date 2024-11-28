@@ -11,7 +11,7 @@ class StudentController extends Controller
 {
     $query = $request->input('name'); 
     $students = Student::when($query, function ($queryBuilder) use ($query) {
-        return $queryBuilder->where('name', 'LIKE', "%{$query}%"); // Filtrar estudiantes por nombre
+        return $queryBuilder->where('name', 'LIKE', "%{$query}%");
     })->get();
 
     return view('students.index', compact('students'));
