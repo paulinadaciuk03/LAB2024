@@ -16,6 +16,7 @@
     </form>
     
     <a href="{{ route('students.create') }}" class="btn btn-success mb-2">Nuevo Estudiante</a>
+    <a href="{{ route('students.pdf', ['name' => request('name')]) }}" class="btn btn-danger mb-2">Descargar PDF</a>
     <a href="{{ url('/') }}" class="btn btn-secondary mb-2">Volver</a>
     <table class="table table-bordered table-striped">
         <thead>

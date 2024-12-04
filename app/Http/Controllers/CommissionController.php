@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Commission;
 use App\Models\Course;
 use Illuminate\Http\Request;
+use PDF;
+
 
 class CommissionController extends Controller
 {
@@ -24,6 +26,18 @@ class CommissionController extends Controller
         $courses = Course::all(); 
 
         return view('commissions.index', compact('commissions', 'courses'));
+    }
+
+    public function exportPdf()
+    {
+    // Obtener las comisiones con sus relaciones
+    $commissions = Commission::with(['course', 'professor'])->get();
+
+    // Generar el PDF usando una vista
+    $pdf = PDF::loadView('commissions.pdf', compact('commissions'));
+
+    // Descargar el PDF
+    return $pdf->download('reporte_comisiones.pdf');
     }
 
     public function create()

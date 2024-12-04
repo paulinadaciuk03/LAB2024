@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
+
 
 class StudentController extends Controller
 {
@@ -17,9 +19,22 @@ class StudentController extends Controller
     return view('students.index', compact('students'));
 }
 
+public function exportToPdf(Request $request)
+{
+    $query = $request->input('name');
+    $students = Student::when($query, function ($queryBuilder) use ($query) {
+        return $queryBuilder->where('name', 'LIKE', "%{$query}%");
+    })->get();
+
+    $pdf = Pdf::loadView('students.pdf', compact('students'));
+    return $pdf->download('students.pdf');
+}
+
+
     public function create()
     {
-        return view('students.create'); 
+        $courses = Course::all();
+        return view('students.create', compact('courses'));    
     }
 
     public function store(Request $request)
@@ -29,9 +44,13 @@ class StudentController extends Controller
             'email' => 'required|email|unique:students,email', 
         ]);
 
-        Student::create($validated); 
-        return redirect()->route('students.index'); 
-    }
+        Student::create([ 
+        'name' => $request->name,
+            'email' => $request->email,
+        ]);
+
+        return redirect()->route('students.index')->with('success', 'Estudiante creado con éxito');
+    } 
 
     public function edit(Student $student)
     {

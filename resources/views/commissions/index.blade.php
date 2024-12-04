@@ -32,6 +32,7 @@
     </form>
 
     <a href="{{ route('commissions.create') }}" class="btn btn-success mb-3">Nueva Comisión</a>
+    <a href="{{ route('commissions.exportPdf') }}" class="btn btn-danger mb-3">Descargar PDF</a>
     <a href="{{ url('/') }}" class="btn btn-secondary mb-3">Volver</a>
 
     <table class="table table-bordered table-striped">

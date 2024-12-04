@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use App\Models\Subject;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
+
 
 class CourseController extends Controller
 {
@@ -21,6 +23,22 @@ class CourseController extends Controller
 
         return view('courses.index', compact('courses', 'subjects'));
     }
+
+    public function exportToPdf(Request $request)
+{
+    // Filtrar cursos si se selecciona una materia
+    $query = Course::query();
+    if ($request->has('subject_id') && $request->subject_id != '') {
+        $query->where('subject_id', $request->subject_id);
+    }
+
+    // Agrupar cursos por materia
+    $courses = $query->with('subject')->get()->groupBy('subject.name');
+
+    // Generar el PDF
+    $pdf = Pdf::loadView('courses.pdf', compact('courses'));
+    return $pdf->download('reporte_cursos_por_materia.pdf');
+}
 
     public function create()
     {

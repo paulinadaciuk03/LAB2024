@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Professor;
 use Illuminate\Http\Request;
+use PDF;
+
 
 class ProfessorController extends Controller
 {
@@ -11,6 +13,17 @@ class ProfessorController extends Controller
     {
         $professors = Professor::all();
         return view('professors.index', compact('professors'));
+    }
+    public function exportPdf()
+    {
+    // Obtener profesores con sus comisiones asignadas
+    $professors = Professor::with('commissions.course')->get();
+
+    // Generar el PDF usando una vista
+    $pdf = PDF::loadView('professors.pdf', compact('professors'));
+
+    // Descargar el PDF
+    return $pdf->download('reporte_asistencia_profesores.pdf');
     }
 
     public function create()
