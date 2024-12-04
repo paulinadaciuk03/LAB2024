@@ -11,7 +11,7 @@
 <div class="container">
     <h1 class="my-4">Materias</h1>
     <a href="{{ route('subjects.create') }}" class="btn btn-success mb-3">Nueva Materia</a>
-    <a href="{{ url('/') }}" class="btn btn-primary mb-3">Volver</a>
+    <a href="{{ url('/') }}" class="btn btn-secondary mb-3">Volver</a>
     <table class="table table-bordered table-striped">
         <thead>
             <tr>

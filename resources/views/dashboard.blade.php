@@ -7,7 +7,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<div class="container-fluid">
+<div class="container-fluid vh-100 d-flex align-items-center justify-content-center">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Escuela</a>

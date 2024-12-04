@@ -12,7 +12,7 @@
     <h1 class="my-4">Profesores</h1>
     <a href="{{ route('professors.create') }}" class="btn btn-success mb-3">Nuevo Profesor</a>
     <a href="{{ route('professors.exportPdf') }}" class="btn btn-danger mb-3">Descargar PDF</a>
-    <a href="{{ url('/') }}" class="btn btn-primary mb-3">Volver</a>
+    <a href="{{ url('/') }}" class="btn btn-secondary mb-3">Volver</a>
     <table class="table table-bordered table-striped">
         <thead>
             <tr>

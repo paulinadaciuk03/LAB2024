@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 use App\Models\Student;
+use App\Models\Course;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 
